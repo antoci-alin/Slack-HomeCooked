@@ -1,4 +1,6 @@
 import React from 'react';
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import styled from 'styled-components';
 import {
   FiberManualRecord,
@@ -14,10 +16,8 @@ import {
   ExpandMore,
   Add,
 } from '@material-ui/icons';
-import { useCollection } from 'react-firebase-hooks/firestore';
 import SidebarOption from './SidebarOption';
 import { auth, db } from '../firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Sidebar() {
   const [channels] = useCollection(db.collection('rooms'));

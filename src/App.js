@@ -1,13 +1,13 @@
 import React from 'react';
+import Spinner from 'react-spinkit';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 import Login from './components/Login';
-import Spinner from 'react-spinkit';
 
 import './App.css';
 

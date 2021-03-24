@@ -1,7 +1,7 @@
-import { InfoOutlined, StarBorderOutlined } from '@material-ui/icons';
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { InfoOutlined, StarBorderOutlined } from '@material-ui/icons';
 import { selectRoomId } from '../features/appSlice';
 import ChatInput from './ChatInput';
 import { useDocument } from 'react-firebase-hooks/firestore';

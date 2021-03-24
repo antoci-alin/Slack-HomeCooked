@@ -16,19 +16,21 @@ import {
 } from '@material-ui/icons';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import SidebarOption from './SidebarOption';
-import { db } from '../firebase';
+import { auth, db } from '../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Sidebar() {
-  const [channels, loading, error] = useCollection(db.collection('rooms'));
+  const [channels] = useCollection(db.collection('rooms'));
+  const [user] = useAuthState(auth);
 
   return (
     <SidebarContainer>
       <SidebarHeader>
         <SidebarInfo>
-          <h2>PAPA FAM HQ</h2>
+          <h2>HOME COOKED</h2>
           <h3>
             <FiberManualRecord />
-            Jhon Doe
+            {user.displayName}
           </h3>
         </SidebarInfo>
         <Create />
